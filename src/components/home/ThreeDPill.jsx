@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
 function Model(props) {
-  const gltfPath = "public/pills.gltf"; // Update with the path to your GLTF model
+  const gltfPath = "/pills.gltf"; // Update with the path to your GLTF model
   const gltf = useGLTF(gltfPath);
 
   const [modelLoaded, setModelLoaded] = useState(false); // Flag to track model loading

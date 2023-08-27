@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
 
 function Model(props) {
-  const gltfPath = "public/viagra_4/scene.gltf"; // Update with the path to your GLTF model
+  const gltfPath = "/viagra_4/scene.gltf"; // Update with the path to your GLTF model
   const gltf = useGLTF(gltfPath);
 
   // const [rotX, setRotX] = useState(0);
