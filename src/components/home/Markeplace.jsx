@@ -179,8 +179,188 @@ function Markeplace(props) {
             </div>
           </div>
           <div className="lower-part-product-types-o">
-            <div className="card-pill-o"></div>
-            <div className="card-pill-o bg-two-pill-o"></div>
+            <div className="card-pill-o">
+              <div className="cont-posologie">
+                <div className="big-s-posologie">50</div>
+                <div className="big-s-name-posologie">Sidegra</div>
+              </div>
+              <div className="price-pill-posologie">
+                <span className="t-1-ro">€</span> 18
+                <span className="t-2-ro">/ 4 pillules</span>
+              </div>
+              <div className="container-info-pill-posologie">
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie">
+                    Efficacite, Securite{" "}
+                  </div>
+                </div>
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie">
+                    Duration entre 4/6 h
+                  </div>
+                </div>
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie">Discretion garantie</div>
+                </div>
+              </div>
+              <div className="add-to-cart-posologie">
+                Ajouter au Panier{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="goon-logo"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className="card-pill-o bg-two-pill-o">
+              <div className="cont-posologie">
+                <div className="big-s-posologie">100</div>
+                <div className="big-s-name-posologie whitec">Sidegra</div>
+              </div>
+              <div className="price-pill-posologie whitec">
+                <span className="t-1-ro">€</span> 20
+                <span className="t-2-ro">/ 4 pillules</span>
+              </div>
+              <div className="container-info-pill-posologie">
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie whiteb">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo varc"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie whitecc">
+                    Meilleur prix offert
+                  </div>
+                </div>
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie whiteb">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo varc"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie whitecc">
+                    Duration entre 4/6 h
+                  </div>
+                </div>
+                <div className="row-info-pill-posologie">
+                  <div className="tick-posologie whiteb">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="tick-logo varc"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-tick-posologie whitecc">
+                    Discretion garantie
+                  </div>
+                </div>
+              </div>
+              <div className="add-to-cart-posologie reverse-button-add">
+                Ajouter au Panier
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="goon-logo"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -882,9 +882,166 @@ header {
   height: 85%;
   background-color: rgb(234, 243, 252);
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.103);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bg-two-pill-o {
   background-color: rgb(87, 107, 237);
+}
+
+.cont-posologie {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.big-s-posologie {
+  height: 35px;
+  width: 45px;
+  border-radius: 10px;
+  background-color: #254aa9;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.pos-y {
+  background: rgb(236, 160, 18);
+}
+
+.big-s-name-posologie {
+  font-size: 24px;
+}
+
+.price-pill-posologie {
+  height: 50px;
+  width: 80%;
+  padding: 10px 0px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  font-size: 50px;
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.t-1-ro {
+  color: rgba(165, 165, 165, 0.796);
+}
+
+.t-2-ro {
+  font-size: 18px;
+  color: rgb(165, 165, 165);
+}
+
+.container-info-pill-posologie {
+  width: 100%;
+  height: 100px;
+  margin-top: 50px;
+
+  box-sizing: border-box;
+  padding: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row-info-pill-posologie {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tick-posologie {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-tick-posologie {
+  width: 80%;
+  color: rgba(75, 75, 75, 0.768);
+  box-sizing: border-box;
+  font-size: 17px;
+}
+
+.tick-logo {
+  color: white;
+  height: 65%;
+}
+
+.add-to-cart-posologie {
+  background-color: #3a6be5;
+  margin-top: 50px;
+  height: 75px;
+  width: 80%;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.add-to-cart-posologie:hover {
+  background-color: rgb(48, 49, 57);
+  color: white;
+}
+
+.goon-logo {
+  height: 25px;
+}
+
+.whitec {
+  color: white;
+}
+
+.whitecc {
+  color: rgba(255, 255, 255, 0.748);
+}
+
+.whiteb {
+  background-color: white;
+}
+
+.varc {
+  color: var(--primary-color);
+}
+
+.reverse-button-add {
+  background-color: white;
+  color: var(--primary-color);
 }
