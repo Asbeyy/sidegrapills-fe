@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ThreeDCard from "./ThreeDCard";
 
-function Markeplace(props) {
+function Markeplace2(props) {
   const [pillType, setPillType] = useState("mg50");
 
   function handleChosePillType(event) {
@@ -151,4 +151,72 @@ function Markeplace(props) {
   );
 }
 
+function Markeplace(props) {
+  const [pillType, setPillType] = useState("mg50");
+
+  function handleChosePillType(event) {
+    setPillType(event.target.id);
+  }
+
+  function handleAddToCart(event) {
+    const product_id = event.target.id;
+    props.onAddToCard(product_id);
+  }
+
+  return (
+    <div id="buy" className="page">
+      <div className="container-product-types-o">
+        <div className="left-side-container-product-types-o">
+          <BannerMarket />
+        </div>
+        <div className="right-side-container-product-types-o">
+          <div className="upper-part-product-types-o">
+            <div className="title-product-types-o">
+              Choisissez la pillule pour vous
+            </div>
+            <div className="subtitle-product-types-o">
+              Achetez, rapidement en 3 clicks.
+            </div>
+          </div>
+          <div className="lower-part-product-types-o">
+            <div className="card-pill-o"></div>
+            <div className="card-pill-o bg-two-pill-o"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default Markeplace;
+
+function BannerMarket() {
+  return (
+    <div className="banner-product-types-o">
+      <div className="logo-banner-product-types-o">
+        <img src="/logo.png" />
+      </div>
+      <div className="title-banner-product-types-o">Reallumez</div>
+      <div className="subtitle-banner-product-types-o"> la Passion</div>
+      <div className="description-banner-product-types-o">
+        Le remède à l'impuissance masculine à la portée de toutes les bourses.
+      </div>
+      <div className="container-reviews-banner">
+        <div className="container-review-card">
+          <div className="card-review">
+            <div className="upper-review">
+              "Performance digne de star du X, madame tres contente"
+            </div>
+            <div className="bottom-review">
+              <img src="/comment.png" alt="" />
+              <div className="container-info-review-o">
+                <div>Michel Durand</div>
+                <div className="profession-info-review">Entrepreneur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

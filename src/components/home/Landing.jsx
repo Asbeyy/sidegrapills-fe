@@ -21,7 +21,7 @@ function Landing() {
         Réveillez la <span style={{ color: "#547adb" }}>passion</span>
       </div>
 
-      <ThreeDPill mouseX={mouseX} />
+      {/* <ThreeDPill mouseX={mouseX} /> */}
     </div>
   );
 }
