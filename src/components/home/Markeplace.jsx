@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import ThreeDCard from "./ThreeDCard";
 
-function Markeplace() {
+function Markeplace(props) {
   const [pillType, setPillType] = useState("mg50");
 
   function handleChosePillType(event) {
     setPillType(event.target.id);
+  }
+
+  function handleAddToCart(event) {
+    const product_id = event.target.id;
+    props.onAddToCard(product_id);
   }
 
   return (
@@ -41,7 +46,10 @@ function Markeplace() {
                 <div className="title-info">Sidegra 50mg </div>
                 <div className="desc-info">4 Pillules </div>
                 <div className="price-info">16.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div id="450" onClick={handleAddToCart} className="add-to-cart">
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
             <div className="card-product">
@@ -50,7 +58,14 @@ function Markeplace() {
                 <div className="title-info">Sidegra 50mg </div>
                 <div className="desc-info">12 Pillules </div>
                 <div className="price-info">42.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div
+                  id="1250"
+                  onClick={handleAddToCart}
+                  className="add-to-cart"
+                >
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
             <div className="card-product sd">
@@ -60,7 +75,14 @@ function Markeplace() {
                 <div className="title-info">Sidegra 50mg </div>
                 <div className="desc-info">28 Pillules </div>
                 <div className="price-info">69.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div
+                  id="2850"
+                  onClick={handleAddToCart}
+                  className="add-to-cart"
+                >
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
           </div>
@@ -72,7 +94,14 @@ function Markeplace() {
                 <div className="title-info">Sidegra 100mg </div>
                 <div className="desc-info">4 Pillules </div>
                 <div className="price-info">19.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div
+                  id="4100"
+                  onClick={handleAddToCart}
+                  className="add-to-cart"
+                >
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
             <div className="card-product y-bg">
@@ -81,7 +110,14 @@ function Markeplace() {
                 <div className="title-info">Sidegra 100mg </div>
                 <div className="desc-info">12 Pillules </div>
                 <div className="price-info">50.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div
+                  id="12100"
+                  onClick={handleAddToCart}
+                  className="add-to-cart"
+                >
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
             <div className="card-product y-bg">
@@ -91,7 +127,14 @@ function Markeplace() {
                 <div className="title-info">Sidegra 100mg </div>
                 <div className="desc-info">28 Pillules </div>
                 <div className="price-info">82.99€</div>
-                <div className="add-to-cart"> Ajouter au Panier</div>
+                <div
+                  id="28100"
+                  onClick={handleAddToCart}
+                  className="add-to-cart"
+                >
+                  {" "}
+                  Ajouter au Panier
+                </div>
               </div>
             </div>
           </div>
