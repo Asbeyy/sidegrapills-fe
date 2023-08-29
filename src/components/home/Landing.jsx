@@ -48,7 +48,7 @@ function Landing(props) {
         to="contact"
         smooth={true}
         duration={800}
-        offset={60}
+        offset={50}
       >
         Aide
       </Link>
