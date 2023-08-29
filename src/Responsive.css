@@ -84,4 +84,16 @@
     width: 90%;
     text-align: center;
   }
+
+  .cart-cont {
+    width: 100vw;
+    height: calc(100vh - 55px);
+    border-radius: 0;
+    top: 55px;
+    left: 0;
+  }
+
+  .button-pay {
+    margin-top: 10px;
+  }
 }
