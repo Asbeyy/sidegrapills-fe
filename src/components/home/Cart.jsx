@@ -11,9 +11,7 @@ function Cart(props) {
       <div className="cont-review-order">
         <div className="cont-products-op">
           {props.cartElements.length === 0 ? (
-            <div className="no-prod-selected">
-              Veuillez selectionner un produit ..
-            </div>
+            <div className="no-prod-selected">{props.language.cart_noprod}</div>
           ) : null}
           {props.cartElements.map((product, index) => {
             return (
@@ -31,20 +29,20 @@ function Cart(props) {
         </div>
         <br />
         <div className="cont-price-review">
-          <div> Sub Total </div>
+          <div> {props.language.cart_subtotalprice} </div>
           <br />
           <div className="holder-price-final">
-            <div>Pillules</div>
-            <div>{totalPrice.toFixed(2)}€</div>
+            <div>{props.language.marketplace_selector_pack_pills}</div>
+            <div>{totalPrice.toFixed(2)} €</div>
           </div>
           <div className="holder-price-final">
-            <div>Livraison</div>
+            <div>{props.language.cart_delivery}</div>
             <div>8.00 €</div>
           </div>
           <br />
           <br />
           <div className="holder-price-final bold">
-            <div>Total</div>
+            <div>{props.language.cart_totalprice}</div>
             <div>{(totalPrice + 8).toFixed(2)} €</div>
           </div>
         </div>
@@ -52,31 +50,31 @@ function Cart(props) {
       <div className="cont-2-inp">
         <div className="cont-input-c hh">
           <input type="text" />
-          <div className="title-input"> Nom</div>
+          <div className="title-input"> {props.language.add_name}</div>
         </div>
         <div className="cont-input-c hh">
           <input type="text" />
-          <div className="title-input"> Prenom</div>
+          <div className="title-input"> {props.language.add_surname}</div>
         </div>
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh2">
           <input type="text" />
-          <div className="title-input"> Adresse ( Rue )</div>
+          <div className="title-input"> {props.language.add_street}</div>
         </div>
         <div className="cont-input-c hh3">
           <input type="text" />
-          <div className="title-input"> N.</div>
+          <div className="title-input"> {props.language.add_streetn}</div>
         </div>
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh3">
           <input type="text" />
-          <div className="title-input"> CAP</div>
+          <div className="title-input"> {props.language.add_cap}</div>
         </div>
         <div className="cont-input-c hh2">
           <input type="text" />
-          <div className="title-input"> Ville</div>
+          <div className="title-input"> {props.language.add_city}</div>
         </div>
       </div>
       <div className="cont-2-inp">
@@ -132,12 +130,12 @@ function Cart(props) {
             <option value="vatican_city">Vatican City</option>
           </select>
 
-          <div> Pays</div>
+          <div className="title-input"> {props.language.add_country}</div>
         </div>
       </div>
 
       <div className="button-pay">
-        Continuer
+        {props.language.add_continue}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -154,7 +152,7 @@ function Cart(props) {
       </div>
       <div className="container-payers">
         <img src={paymentMethods} className="img-payee" />
-        <a href="">Conditions & Termes d'utilisation</a>
+        <a href="">{props.language.add_terms}</a>
       </div>
     </div>
   );
@@ -188,7 +186,6 @@ function CardProductCart(props) {
 
       <div className="info-op">
         <div className="name-m">{props.name}</div>
-        <div className="quant-n"> Quantite - {props.quantity}</div>
       </div>
 
       <div className="counter-op">

@@ -7,24 +7,24 @@ function Model(props) {
   const gltf = useGLTF(gltfPath);
 
   const [modelLoaded, setModelLoaded] = useState(false); // Flag to track model loading
-
-  const [firstLoad, setFirstLoad] = useState(true);
-  const [currentRotation, setCurrentRotation] = useState(0);
   const [meshRotation, setMeshRotation] = useState(
     (1 + props.mouseX * 10) * (Math.PI / 180)
+  );
+  const [meshRotationY, setMeshRotationY] = useState(
+    (1 + props.mouseYe * 10) * (Math.PI / 180)
   );
 
   useEffect(() => {
     const radians = (1 + props.mouseX * 10) * (Math.PI / 180);
     setMeshRotation(radians);
+    //console.log(props.mouseX);
   }, [props.mouseX]);
 
   useEffect(() => {
-    if (firstLoad) {
-      animate();
-      setFirstLoad(false);
-    }
-  }, []);
+    const radians = (1 + props.mouseYe * 10) * (Math.PI / 180);
+    setMeshRotationY(radians);
+    console.log(props.mouseYe);
+  }, [props.mouseYe]);
 
   useEffect(() => {
     if (gltf.scene) {
@@ -38,18 +38,13 @@ function Model(props) {
     }
   }, [modelLoaded]);
 
-  function animate() {
-    setCurrentRotation((currentValue) => currentValue + 0.01);
-    requestAnimationFrame(animate);
-  }
-
   return (
     <group>
       <mesh>
         <primitive
-          rotation-x={Math.sin(currentRotation) * 0.1}
-          rotation-y={-0.3 + Math.sin(currentRotation) / 3 + meshRotation}
-          position={[-5, -3, -10]}
+          rotation-x={-meshRotation}
+          rotation-y={meshRotation}
+          position={[-5, -1, -2]}
           object={gltf.scene}
         />
       </mesh>

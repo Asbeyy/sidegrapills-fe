@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import medicalPic from "../../assets/medical.png";
 import ThreeDPill from "./ThreeDPill";
 
-function Landing() {
+function Landing(props) {
   const [mouseX, setMouseX] = useState(0);
+  const [mouseYe, setMouseY] = useState(0);
 
   function handleMouseMove(event) {
-    console.log(event.clientX / window.innerWidth - 0.5);
+    setMouseY(event.clientY / window.innerHeight - 0.5);
     setMouseX(event.clientX / window.innerWidth - 0.5);
   }
 
@@ -18,10 +19,31 @@ function Landing() {
         <div>SidegraPills</div>
       </div>
       <div className="hero-subtext">
-        Réveillez la <span style={{ color: "#547adb" }}>passion</span>
+        {props.language.hero_subtitle}
+        <span style={{ color: "#547adb" }}>
+          &nbsp;{props.language.hero_subtitle_color}
+        </span>
+      </div>
+      <div className="cont-scroll">
+        <div className="scroll-text">{props.language.scroll_text}</div>
+        <div className="floating-scroll">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 97 162"
+            height="162"
+            width="97"
+            className="svg"
+          >
+            <path
+              fill="#547adb90"
+              d="M47.2124 0H54.0796V151.644L86.6991 128.712H97L50.646 162L0 128.712H10.3009L47.2124 151.644V0Z"
+            ></path>
+          </svg>
+        </div>
       </div>
 
-      {/* <ThreeDPill mouseX={mouseX} /> */}
+      <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} />
     </div>
   );
 }

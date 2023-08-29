@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Login() {
+  const [passVisible, setPassVisible] = useState(false);
+  const [inputType, setInputType] = useState("password");
   function handleLoginSubmit(e) {
     e.preventDefault();
 
@@ -13,14 +15,24 @@ function Login() {
     }
   }
 
+  function handleShowPassowrd() {
+    if (passVisible) {
+      setInputType("password");
+      setPassVisible(false);
+    } else {
+      setInputType("text");
+      setPassVisible(true);
+    }
+  }
   return (
     <div className="body-site">
       <form onSubmit={handleLoginSubmit} className="login-form">
         <h2> Admin Panel </h2>
         <div className="cont-input-c">
-          <input className="password-mm" type="password" />
+          <input className="password-mm" type={inputType} />
           <div className="title-input">Mot de passe</div>
         </div>
+        <div onClick={handleShowPassowrd}>Show password</div>
         <button className="login-button" type="submit">
           Login
         </button>

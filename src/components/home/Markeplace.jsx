@@ -1,366 +1,364 @@
-import React, { useState } from "react";
-import ThreeDCard from "./ThreeDCard";
-
-function Markeplace2(props) {
-  const [pillType, setPillType] = useState("mg50");
-
-  function handleChosePillType(event) {
-    setPillType(event.target.id);
-  }
-
-  function handleAddToCart(event) {
-    const product_id = event.target.id;
-    props.onAddToCard(product_id);
-  }
-
-  return (
-    <div id="buy" className="page">
-      <div className="title-buy">Acheter Enligne</div>
-      <div className="container-marketplace">
-        <div className="product-selector-container">
-          <div
-            id="mg50"
-            onClick={handleChosePillType}
-            className={`product-selector ${
-              pillType === "mg50" ? "selected-cat" : null
-            }`}
-          >
-            Sidegra 50Mg
-          </div>
-          <div
-            id="mg100"
-            onClick={handleChosePillType}
-            className={`product-selector ${
-              pillType === "mg100" ? "selected-cat" : null
-            }`}
-          >
-            Sidegra 100Mg
-          </div>
-        </div>
-
-        {pillType === "mg50" ? (
-          <div className="container-cards">
-            <div className="card-product ss">
-              <div className="pill-3d-container l-bg"></div>
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 50mg </div>
-                <div className="desc-info">4 Pillules </div>
-                <div className="price-info">16.99€</div>
-                <div id="450" onClick={handleAddToCart} className="add-to-cart">
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-            <div className="card-product">
-              <ThreeDCard key="two" />
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 50mg </div>
-                <div className="desc-info">12 Pillules </div>
-                <div className="price-info">42.99€</div>
-                <div
-                  id="1250"
-                  onClick={handleAddToCart}
-                  className="add-to-cart"
-                >
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-            <div className="card-product sd">
-              <div className="pill-3d-container r-bg"></div>
-
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 50mg </div>
-                <div className="desc-info">28 Pillules </div>
-                <div className="price-info">69.99€</div>
-                <div
-                  id="2850"
-                  onClick={handleAddToCart}
-                  className="add-to-cart"
-                >
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="container-cards">
-            <div className="card-product y-bg">
-              <div className="pill-3d-container y-l-bg"></div>
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 100mg </div>
-                <div className="desc-info">4 Pillules </div>
-                <div className="price-info">19.99€</div>
-                <div
-                  id="4100"
-                  onClick={handleAddToCart}
-                  className="add-to-cart"
-                >
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-            <div className="card-product y-bg">
-              <ThreeDCard classTo={"y-bg  special-b"} key="two" />
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 100mg </div>
-                <div className="desc-info">12 Pillules </div>
-                <div className="price-info">50.99€</div>
-                <div
-                  id="12100"
-                  onClick={handleAddToCart}
-                  className="add-to-cart"
-                >
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-            <div className="card-product y-bg">
-              <div className="pill-3d-container y-r-bg"></div>
-
-              <div className="container-info-prod">
-                <div className="title-info">Sidegra 100mg </div>
-                <div className="desc-info">28 Pillules </div>
-                <div className="price-info">82.99€</div>
-                <div
-                  id="28100"
-                  onClick={handleAddToCart}
-                  className="add-to-cart"
-                >
-                  {" "}
-                  Ajouter au Panier
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div className="title-extra">besoin d'info?</div>
-        <div className="extra-marketplace">
-          <div className="selector-extra-b"> Informations Sanitaires</div>
-          <div className="selector-extra-b"> F.A.Q</div>
-          <div className="selector-extra-b"> Conditions Generales</div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import React, { useEffect, useState } from "react";
 
 function Markeplace(props) {
-  const [pillType, setPillType] = useState("mg50");
-
-  function handleChosePillType(event) {
-    setPillType(event.target.id);
-  }
+  const [packSize, setPackSize] = useState("4");
 
   function handleAddToCart(event) {
     const product_id = event.target.id;
     props.onAddToCard(product_id);
+  }
+  function handleSelectPackSize(x) {
+    setPackSize(x);
+  }
+
+  function CardSelectPack(props) {
+    function handleSelectPack(event) {
+      const packSize = event.target.id;
+      props.onSelectPack(packSize);
+    }
+
+    return (
+      <div className="container-chose-size-pack">
+        <div
+          id="4"
+          onClick={handleSelectPack}
+          className={packSize === "4" ? `selected-size-pack` : null}
+        >
+          4 {props.language.marketplace_selector_pack_pills}
+        </div>
+        <div
+          id="12"
+          onClick={handleSelectPack}
+          className={packSize === "12" ? `selected-size-pack` : null}
+        >
+          12 {props.language.marketplace_selector_pack_pills}
+        </div>
+        <div
+          id="28"
+          onClick={handleSelectPack}
+          className={packSize === "28" ? `selected-size-pack` : null}
+        >
+          28 {props.language.marketplace_selector_pack_pills}
+        </div>
+      </div>
+    );
+  }
+  function BannerMarket(props) {
+    return (
+      <div className="banner-product-types-o">
+        <div className="logo-banner-product-types-o">
+          <img src="/logo.png" />
+        </div>
+        <div className="title-banner-product-types-o">
+          {props.language.marketplace_banner_title}
+        </div>
+        <div className="subtitle-banner-product-types-o">
+          {" "}
+          {props.language.marketplace_banner_subtitle}
+        </div>
+        <div className="description-banner-product-types-o">
+          {props.language.marketplace_banner_description}
+        </div>
+        <div className="container-reviews-banner">
+          <div className="container-review-card">
+            <div className="card-review">
+              <div className="upper-review">
+                {props.language.marketplace_banner_review}
+              </div>
+              <div className="bottom-review">
+                <img src="/comment.png" alt="" />
+                <div className="container-info-review-o">
+                  <div>Michel Durand</div>
+                  <div className="profession-info-review">Entrepreneur</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  function Card50MG(props) {
+    const [currentQ, setCurrentQ] = useState(setInitialPrice());
+
+    useEffect(() => {
+      setCurrentPrice();
+    }, [currentQ]);
+
+    function setCurrentPrice() {
+      if (props.packSize === "4") {
+        setCurrentQ(18);
+      } else if (props.packSize === "12") {
+        setCurrentQ(44);
+      } else if (props.packSize == "28") {
+        setCurrentQ(72);
+      }
+    }
+
+    function setInitialPrice() {
+      if (props.packSize === "4") {
+        return 18;
+      } else if (props.packSize === "12") {
+        return 44;
+      } else if (props.packSize == "28") {
+        return 72;
+      }
+    }
+
+    return (
+      <div className="card-pill-o">
+        <div className="cont-posologie">
+          <div className="big-s-posologie">50</div>
+          <div className="big-s-name-posologie">Sidegra</div>
+          <img src="/50mg.png" alt="" />
+        </div>
+        <div className="price-pill-posologie">
+          <span className="t-1-ro">€</span> {currentQ}
+          <span className="t-2-ro">
+            / {props.packSize} {props.language.marketplace_selector_pack_pills}
+          </span>
+        </div>
+        <div className="container-info-pill-posologie">
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie">
+              {props.language.marketplace_card_d1}
+            </div>
+          </div>
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie">
+              {props.language.marketplace_card_d2}
+            </div>
+          </div>
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie">
+              {props.language.marketplace_card_x}
+            </div>
+          </div>
+        </div>
+        <div
+          id={`${props.packSize}50`}
+          onClick={handleAddToCart}
+          className="add-to-cart-posologie"
+        >
+          {props.language.marketplace_add_cart}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="goon-logo"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+  function Card100MG(props) {
+    const [currentQ, setCurrentQ] = useState(setInitialPrice());
+
+    useEffect(() => {
+      setCurrentPrice();
+    }, [currentQ]);
+
+    function setCurrentPrice() {
+      if (props.packSize === "4") {
+        setCurrentQ(20);
+      } else if (props.packSize === "12") {
+        setCurrentQ(54);
+      } else if (props.packSize == "28") {
+        setCurrentQ(85);
+      }
+    }
+
+    function setInitialPrice() {
+      if (props.packSize === "4") {
+        return 20;
+      } else if (props.packSize === "12") {
+        return 54;
+      } else if (props.packSize == "28") {
+        return 85;
+      }
+    }
+
+    return (
+      <div className="card-pill-o bg-two-pill-o">
+        <div className="cont-posologie">
+          <div className="big-s-posologie">100</div>
+          <div className="big-s-name-posologie whitec">Sidegra</div>
+          <img src="/100mg.png" alt="" />
+        </div>
+        <div className="price-pill-posologie whitec">
+          <span className="t-1-ro">€</span> {currentQ}
+          <span className="t-2-ro">
+            / {props.packSize} {props.language.marketplace_selector_pack_pills}
+          </span>
+        </div>
+        <div className="container-info-pill-posologie">
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie whiteb">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo varc"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie whitecc">
+              {props.language.marketplace_card_c1}
+            </div>
+          </div>
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie whiteb">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo varc"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie whitecc">
+              {props.language.marketplace_card_c2}
+            </div>
+          </div>
+          <div className="row-info-pill-posologie">
+            <div className="tick-posologie whiteb">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="tick-logo varc"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </div>
+            <div className="text-tick-posologie whitecc">
+              {props.language.marketplace_card_x}
+            </div>
+          </div>
+        </div>
+        <div
+          id={`${props.packSize}100`}
+          onClick={handleAddToCart}
+          className="add-to-cart-posologie reverse-button-add"
+        >
+          {props.language.marketplace_add_cart}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="goon-logo"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div id="buy" className="page">
       <div className="container-product-types-o">
         <div className="left-side-container-product-types-o">
-          <BannerMarket />
+          <BannerMarket language={props.language} />
         </div>
         <div className="right-side-container-product-types-o">
           <div className="upper-part-product-types-o">
             <div className="title-product-types-o">
-              Choisissez la pillule pour vous
+              {props.language.marketplace_title}
             </div>
             <div className="subtitle-product-types-o">
-              Achetez, rapidement en 3 clicks.
+              {props.language.marketplace_subtitle}
             </div>
+            <CardSelectPack
+              language={props.language}
+              onSelectPack={handleSelectPackSize}
+            />
           </div>
           <div className="lower-part-product-types-o">
-            <div className="card-pill-o">
-              <div className="cont-posologie">
-                <div className="big-s-posologie">50</div>
-                <div className="big-s-name-posologie">Sidegra</div>
-              </div>
-              <div className="price-pill-posologie">
-                <span className="t-1-ro">€</span> 18
-                <span className="t-2-ro">/ 4 pillules</span>
-              </div>
-              <div className="container-info-pill-posologie">
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie">
-                    Efficacite, Securite{" "}
-                  </div>
-                </div>
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie">
-                    Duration entre 4/6 h
-                  </div>
-                </div>
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie">Discretion garantie</div>
-                </div>
-              </div>
-              <div className="add-to-cart-posologie">
-                Ajouter au Panier{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="goon-logo"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div className="card-pill-o bg-two-pill-o">
-              <div className="cont-posologie">
-                <div className="big-s-posologie">100</div>
-                <div className="big-s-name-posologie whitec">Sidegra</div>
-              </div>
-              <div className="price-pill-posologie whitec">
-                <span className="t-1-ro">€</span> 20
-                <span className="t-2-ro">/ 4 pillules</span>
-              </div>
-              <div className="container-info-pill-posologie">
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie whiteb">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo varc"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie whitecc">
-                    Meilleur prix offert
-                  </div>
-                </div>
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie whiteb">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo varc"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie whitecc">
-                    Duration entre 4/6 h
-                  </div>
-                </div>
-                <div className="row-info-pill-posologie">
-                  <div className="tick-posologie whiteb">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="tick-logo varc"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-tick-posologie whitecc">
-                    Discretion garantie
-                  </div>
-                </div>
-              </div>
-              <div className="add-to-cart-posologie reverse-button-add">
-                Ajouter au Panier
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="goon-logo"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-            </div>
+            <Card50MG language={props.language} packSize={packSize} />
+            <Card100MG language={props.language} packSize={packSize} />
           </div>
         </div>
       </div>
@@ -369,34 +367,3 @@ function Markeplace(props) {
 }
 
 export default Markeplace;
-
-function BannerMarket() {
-  return (
-    <div className="banner-product-types-o">
-      <div className="logo-banner-product-types-o">
-        <img src="/logo.png" />
-      </div>
-      <div className="title-banner-product-types-o">Reallumez</div>
-      <div className="subtitle-banner-product-types-o"> la Passion</div>
-      <div className="description-banner-product-types-o">
-        Le remède à l'impuissance masculine à la portée de toutes les bourses.
-      </div>
-      <div className="container-reviews-banner">
-        <div className="container-review-card">
-          <div className="card-review">
-            <div className="upper-review">
-              "Performance digne de star du X, madame tres contente"
-            </div>
-            <div className="bottom-review">
-              <img src="/comment.png" alt="" />
-              <div className="container-info-review-o">
-                <div>Michel Durand</div>
-                <div className="profession-info-review">Entrepreneur</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
