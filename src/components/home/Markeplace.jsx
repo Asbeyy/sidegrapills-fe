@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
 function Markeplace(props) {
   const [packSize, setPackSize] = useState("4");
@@ -59,6 +60,15 @@ function Markeplace(props) {
         <div className="description-banner-product-types-o">
           {props.language.marketplace_banner_description}
         </div>
+        <Link
+          to="product-info"
+          smooth={true}
+          duration={300}
+          offset={-150}
+          className="description-banner-info-btn"
+        >
+          Plus d'info
+        </Link>
         <div className="container-reviews-banner">
           <div className="container-review-card">
             <div className="card-review">

@@ -42,8 +42,9 @@ function Landing(props) {
           </svg>
         </div>
       </div>
+      <div className="help-float-button"> Aide </div>
 
-      <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} />
+      {/* <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} /> */}
     </div>
   );
 }

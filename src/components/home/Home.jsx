@@ -5,6 +5,9 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Informations from "./Informations";
 import Markeplace from "./Markeplace";
+import ProductDetails from "./ProductDetails";
+import Contact from "./Contact";
+import Footer from "./Footer";
 import Cart from "./Cart";
 
 import { fr_lang } from "../lang/fr-FR";
@@ -152,6 +155,12 @@ function Home() {
       <Informations language={langPack} />
 
       <Markeplace language={langPack} onAddToCard={handleAddToCard} />
+
+      <ProductDetails />
+
+      <Contact />
+
+      <Footer onLanguageChange={handleSetLanguage} />
 
       <Cart
         language={langPack}
