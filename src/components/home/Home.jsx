@@ -20,10 +20,10 @@ import { ar_lang } from "../lang/ar-SA";
 import { el_lang } from "../lang/el-GR";
 
 function Home() {
-  if (!localStorage.getItem("acces-token-pfc")) {
-    location.href = "/";
-    return;
-  }
+  // if (!localStorage.getItem("acces-token-pfc")) {
+  //   location.href = "/";
+  //   return;
+  // }
 
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(true);
