@@ -1,13 +1,24 @@
+import { Link } from "react-scroll";
+
 function Footer() {
   return (
     <footer>
       <div className="footer-up">
         <div className="box-footer-up">
           <div className="title-box-footer-up">MAPPE DU SITE</div>
-          <a href="">Home</a>
-          <a href="">Informations</a>
-          <a href="">Acheter</a>
-          <a href="">Medicament</a>
+
+          <Link to="home" smooth={true} duration={500}>
+            Home
+          </Link>
+          <Link to="informations" smooth={true} duration={500}>
+            Informations
+          </Link>
+          <Link to="buy" smooth={true} duration={500}>
+            Acheter
+          </Link>
+          <Link to="product-info" smooth={true} duration={500}>
+            Medicament
+          </Link>
         </div>
 
         <div className="box-footer-up">
