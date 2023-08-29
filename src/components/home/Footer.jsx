@@ -16,7 +16,7 @@ function Footer() {
           <Link to="buy" smooth={true} duration={500}>
             Acheter
           </Link>
-          <Link to="product-info" smooth={true} duration={500}>
+          <Link to="product-info" offset={-150} smooth={true} duration={500}>
             Medicament
           </Link>
         </div>
