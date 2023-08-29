@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 
 import medicalPic from "../../assets/medical.png";
 import ThreeDPill from "./ThreeDPill";
@@ -42,7 +43,14 @@ function Landing(props) {
           </svg>
         </div>
       </div>
-      <div className="help-float-button"> Aide </div>
+      <Link
+        className="help-float-button"
+        to="contact"
+        smooth={true}
+        duration={800}
+      >
+        Aide
+      </Link>
 
       {/* <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} /> */}
     </div>
