@@ -94,6 +94,15 @@
   }
 
   .button-pay {
+    min-height: 55px;
     margin-top: 10px;
+  }
+
+  .cont-price-review {
+    padding: 10px 0;
+  }
+
+  .cont-products-op {
+    max-height: 80px;
   }
 }
