@@ -42,14 +42,7 @@ export default function Header(props) {
 
   return (
     <header>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: "20px",
-        }}
-      >
+      <div className="logo-name-header-xcw">
         <img src="./logo.png" style={{ height: "35px" }} />
         <div className="title-name">Sidegrapills</div>
       </div>
@@ -71,7 +64,12 @@ export default function Header(props) {
         <Link to="home" smooth={true} duration={500}>
           <div className="link-sel">{props.language.header_link1}</div>
         </Link>
-        <Link to="informations" smooth={true} duration={500}>
+        <Link
+          className="link-sel-extra-xc"
+          to="informations"
+          smooth={true}
+          duration={500}
+        >
           <div className="link-sel">{props.language.header_link2}</div>
         </Link>
         <Link to="buy" smooth={true} duration={500}>
