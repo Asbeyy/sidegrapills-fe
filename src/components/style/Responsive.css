@@ -105,4 +105,8 @@
   .cont-products-op {
     max-height: 80px;
   }
+
+  .card-product-op {
+    min-height: 40px;
+  }
 }
