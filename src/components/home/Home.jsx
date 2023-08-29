@@ -132,7 +132,7 @@ function Home() {
       return de_lang;
     } else if (xx == "ar-SA") {
       return ar_lang;
-    } else if ((xx = "el-GR")) {
+    } else if (xx == "el-GR") {
       return el_lang;
     } else {
       // if navigator.language is not any of the above, set english
