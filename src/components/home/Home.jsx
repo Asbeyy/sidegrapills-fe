@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "../../App.css";
-import "../../Responsive.css";
+import "../style/App.css";
+import "../style/Responsive.css";
 
 import Header from "./Header";
 import Landing from "./Landing";
