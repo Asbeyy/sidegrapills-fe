@@ -684,14 +684,15 @@ header {
   border-radius: 20px;
 
   box-sizing: border-box;
-  padding: 5px;
+  padding: 10px 0;
 }
 
 .card-review {
   height: 200px;
-  background-color: rgb(21, 26, 53);
+  background-color: rgba(21, 26, 53, 0.872);
   color: white;
   border-radius: 20px;
+  margin: 0 10px;
 
   box-sizing: border-box;
   padding: 25px;
@@ -700,6 +701,12 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+}
+
+.carousel-lmao {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .upper-review {

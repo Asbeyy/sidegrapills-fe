@@ -12,7 +12,7 @@ function Model(props) {
   );
 
   useEffect(() => {
-    const radians = (1 + props.mouseX * 2) * (Math.PI / 180);
+    const radians = (1 + props.mouseX * 10) * (Math.PI / 180);
     setMeshRotation(radians);
     //console.log(props.mouseX);
   }, [props.mouseX]);
@@ -35,7 +35,9 @@ function Model(props) {
         <primitive
           rotation-x={0}
           rotation-y={meshRotation}
-          position={[-7, -0.5, -2]}
+          position={
+            window.innerWidth < 500 ? [-5.5, -10, -24] : [-5.5, -2, -10]
+          }
           object={gltf.scene}
         />
       </mesh>

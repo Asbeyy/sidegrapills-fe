@@ -6,6 +6,7 @@ function RevCarousel(props) {
   return (
     <div className="container-review-card">
       <Carousel
+        className="carousel-lmao"
         autoPlay={true} // Enable auto play
         interval={5000} // Set interval to 5 seconds
         infiniteLoop={true} // Enable infinite loop
