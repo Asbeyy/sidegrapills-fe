@@ -6,9 +6,11 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Informations from "./Informations";
 import Markeplace from "./Markeplace";
+import Banner from "./Banner";
 import ProductDetails from "./ProductDetails";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Payment from "./Payment";
 import Cart from "./Cart";
 
 import { fr_lang } from "../lang/fr-FR";
@@ -33,6 +35,7 @@ function Home() {
   const [langPack, setLangPack] = useState(choseLangPack(language));
 
   const [classCart, setClassCart] = useState("opacity hidden");
+  const [paymentPage, setPaymentPage] = useState(false);
 
   useEffect(() => {
     setLangPack(choseLangPack(language));
@@ -104,7 +107,10 @@ function Home() {
   function handleToggleCart() {
     if (cartOpen) {
       setCartOpen(false);
-      setClassCart("");
+      setClassCart("opacity");
+      setTimeout(() => {
+        setClassCart("");
+      }, 10);
     } else {
       setCartOpen(true);
       setClassCart("opacity");
@@ -141,14 +147,22 @@ function Home() {
     }
   }
 
+  //Payment Page
+  function handleOpenPaymentPage() {
+    setPaymentPage(true);
+  }
+  function handleExitPaymentPage() {
+    setPaymentPage(false);
+  }
+
   return (
     <div className="body-site">
       <Header
         language={langPack}
         lang={language}
+        cartElements={cart}
         onOpenCart={handleToggleCart}
         onLanguageChange={handleSetLanguage}
-        cartElements={cart}
       />
 
       <Landing language={langPack} />
@@ -157,18 +171,24 @@ function Home() {
 
       <Markeplace language={langPack} onAddToCard={handleAddToCard} />
 
+      <Banner />
+
       <ProductDetails />
 
       <Contact />
 
       <Footer onLanguageChange={handleSetLanguage} />
 
+      <Payment payment={paymentPage} onExit={handleExitPaymentPage} />
+
       <Cart
         language={langPack}
-        deleteProduct={handleDeleteProduct}
         cartElements={cart}
+        hideEffectClass={classCart}
+        onToggleCart={handleToggleCart}
         onSetQuantity={handleSetQuantity}
-        hideEffectClass={cartOpen ? classCart : null}
+        deleteProduct={handleDeleteProduct}
+        onOpenPaymentPage={handleOpenPaymentPage}
       />
     </div>
   );

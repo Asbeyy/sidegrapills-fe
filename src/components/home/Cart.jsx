@@ -6,6 +6,11 @@ function Cart(props) {
     return total + product.price * product.quantity;
   }, 0);
 
+  function handleGotoPaymentPage() {
+    props.onOpenPaymentPage();
+    props.onToggleCart();
+  }
+
   return (
     <div className={`cart-cont ${props.hideEffectClass}`}>
       <div className="cont-review-order">
@@ -134,7 +139,7 @@ function Cart(props) {
         </div>
       </div>
 
-      <div className="button-pay">
+      <div onClick={handleGotoPaymentPage} className="button-pay">
         {props.language.add_continue}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +157,7 @@ function Cart(props) {
       </div>
       <div className="container-payers">
         <img src={paymentMethods} className="img-payee" />
-        <a href="">{props.language.add_terms}</a>
+        <a href="/terms">{props.language.add_terms}</a>
       </div>
     </div>
   );

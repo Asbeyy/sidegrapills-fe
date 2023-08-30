@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../home/Footer";
 function Terms() {
+  function handleBackClick() {
+    location.href = "/";
+  }
+
   return (
     <div className="page">
-      <div className="back-to-site"> Back </div>
+      <div onClick={handleBackClick} className="back-to-site">
+        {" "}
+        Back{" "}
+      </div>
       <div className="container-terms">
         <h1>Terms and Conditions</h1>
         <TextConditions />

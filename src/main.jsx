@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import Home from "./components/home/Home.jsx";
 //import Login from "./components/side/Login.jsx";
 import Terms from "./components/side/Terms.jsx";
-import Payment from "./components/home/Payment.jsx";
 
 import {
   BrowserRouter as Router,
@@ -26,7 +25,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* <Route exact path="/" element={<Login />} /> */}
         <Route exact path="/" element={<Home />} />
         <Route exact path="/terms" element={<Terms />} />
-        <Route exact path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   </Elements>

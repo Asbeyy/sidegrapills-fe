@@ -48,7 +48,7 @@ function ProductDetails() {
               </div>
             </div>
           </div>
-          <div className="details-details-lower-box-container">
+          <div id="posology" className="details-details-lower-box-container">
             <div className="details-box-cont-text">
               <div className="details-box-title">
                 POSOLOGIE ET MODES D'UTILISATION
@@ -65,13 +65,10 @@ function ProductDetails() {
                     Ne pas boire trop l’alcool , puisque cela peut compliquer
                     l'erection.
                   </li>
+                  <li>Dose racomande de 1 pillule / 100mg par jour</li>
                   <li>
-                    Ne pas ecceder la dose racomande de 1 pillule par jour (ou
-                    plus de 100mg)
-                  </li>
-                  <li>
-                    N'utilisez pas Sidegra 100 Tablet si vous avez récemment
-                    pris des nitrates.
+                    N'utilisez pas Sidegra si vous avez récemment pris des
+                    nitrates.
                   </li>
                   <li>
                     Pas recommandée pour les femmes ni les enfants de moins de

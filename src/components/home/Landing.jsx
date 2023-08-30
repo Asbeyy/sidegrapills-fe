@@ -26,7 +26,12 @@ function Landing(props) {
       </div>
       <div className="cont-scroll">
         <div className="scroll-text">{props.language.scroll_text}</div>
-        <div className="floating-scroll">
+        <Link
+          to="informations"
+          smooth={true}
+          duration={300}
+          className="floating-scroll"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,7 +45,7 @@ function Landing(props) {
               d="M47.2124 0H54.0796V151.644L86.6991 128.712H97L50.646 162L0 128.712H10.3009L47.2124 151.644V0Z"
             ></path>
           </svg>
-        </div>
+        </Link>
       </div>
       <Link
         className="help-float-button"
@@ -52,7 +57,7 @@ function Landing(props) {
         Aide
       </Link>
 
-      {/* <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} /> */}
+      <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} />
     </div>
   );
 }

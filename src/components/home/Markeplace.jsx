@@ -61,10 +61,10 @@ function Markeplace(props) {
           {props.language.marketplace_banner_description}
         </div>
         <Link
-          to="product-info"
+          to="posology"
           smooth={true}
           duration={300}
-          offset={-150}
+          offset={-100}
           className="description-banner-info-btn"
         >
           Plus d'info

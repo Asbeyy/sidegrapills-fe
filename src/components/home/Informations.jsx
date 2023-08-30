@@ -55,9 +55,15 @@ function Informations(props) {
         </div>
 
         <div className="container-button-more-info-hero2">
-          <div className="button-more-info-hero2">
+          <Link
+            to="product-info"
+            smooth={true}
+            duration={500}
+            offset={-150}
+            className="button-more-info-hero2"
+          >
             {props.language.more_info_button}
-          </div>
+          </Link>
         </div>
       </div>
     </div>

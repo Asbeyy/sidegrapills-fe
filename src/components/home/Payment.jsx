@@ -36,8 +36,12 @@ function Payment(props) {
     e.preventDefault();
   }
 
+  function handleExitPayment() {
+    props.onExit();
+  }
+
   return (
-    <div className="page">
+    <div className={`page-payment ${props.payment ? "" : "hidex0"}`}>
       <div className="container-pagamenti">
         <div className="box-section-payment">
           <h1 className="title-pay-info">Payement</h1>
@@ -60,13 +64,38 @@ function Payment(props) {
             </label>
             <ButtonAnimated />
             <img src={paymentProviders} className="logopaymentproviderspay" />
-            <a className="termslinkorder" href="">
+            <a className="termslinkorder" href="/terms">
               Termes et Conditions de service
             </a>
           </form>
         </div>
 
-        <div className="box-recap-payment">box2</div>
+        <div className="box-recap-payment">
+          <div className="exit-row-purchase">
+            <div className="exit-payment" onClick={handleExitPayment}>
+              Annuler
+            </div>
+          </div>
+          <div className="cont-pic-name">
+            <img src="./pillicon.png" className="pic-checkout-recap" />
+            <div className="cont-name-checkout-desc">Sidegra - Pillules</div>
+            <div className="mini-banner">Boite</div>
+          </div>
+          <div className="cont-price-checkout">
+            <div className="name-price-checkout">
+              <div className="name-checkout-id">Sous-total:</div>
+              <div className="price-checkout-id">$0</div>
+            </div>
+            <div className="name-price-checkout">
+              <div className="name-checkout-id">Livraison:</div>
+              <div className="price-checkout-id">$0</div>
+            </div>
+            <div className="name-price-checkout totalb">
+              <div className="name-checkout-id">Total:</div>
+              <div className="price-checkout-id">$0</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
