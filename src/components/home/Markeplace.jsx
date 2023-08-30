@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import RevCarousel from "./Carousel";
 
 function Markeplace(props) {
   const [packSize, setPackSize] = useState("4");
@@ -70,24 +71,12 @@ function Markeplace(props) {
           Plus d'info
         </Link>
         <div className="container-reviews-banner">
-          <div className="container-review-card">
-            <div className="card-review">
-              <div className="upper-review">
-                {props.language.marketplace_banner_review}
-              </div>
-              <div className="bottom-review">
-                <img src="/comment.png" alt="" />
-                <div className="container-info-review-o">
-                  <div>Michel Durand</div>
-                  <div className="profession-info-review">Entrepreneur</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <RevCarousel language={props.language} />
         </div>
       </div>
     );
   }
+
   function Card50MG(props) {
     const [currentQ, setCurrentQ] = useState(setInitialPrice());
 

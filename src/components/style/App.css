@@ -675,7 +675,7 @@ header {
 .container-review-card {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.206);
   width: 80%;
-  height: 200px;
+  min-height: 200px;
   background-color: white;
   border-radius: 20px;
 
@@ -684,7 +684,7 @@ header {
 }
 
 .card-review {
-  height: 100%;
+  height: 200px;
   background-color: rgb(21, 26, 53);
   color: white;
   border-radius: 20px;
@@ -727,6 +727,12 @@ header {
   font-size: 20px;
   gap: 6px;
   color: white;
+
+  transform: translateY(-8px);
+}
+
+.container-info-review-o div {
+  font-size: 13px;
 }
 
 .profession-info-review {
