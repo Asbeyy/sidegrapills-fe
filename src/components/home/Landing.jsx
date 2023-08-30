@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 
-import medicalPic from "../../assets/medical.png";
 import ThreeDPill from "./ThreeDPill";
 
 function Landing(props) {
