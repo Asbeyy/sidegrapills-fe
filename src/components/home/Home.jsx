@@ -32,7 +32,7 @@ function Home() {
   const [language, setLanguage] = useState(navigator.language);
   const [langPack, setLangPack] = useState(choseLangPack(language));
 
-  const [classCart, setClassCart] = useState("opacity");
+  const [classCart, setClassCart] = useState("opacity hidden");
 
   useEffect(() => {
     setLangPack(choseLangPack(language));
