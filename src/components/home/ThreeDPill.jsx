@@ -8,23 +8,14 @@ function Model(props) {
 
   const [modelLoaded, setModelLoaded] = useState(false); // Flag to track model loading
   const [meshRotation, setMeshRotation] = useState(
-    (1 + props.mouseX * 10) * (Math.PI / 180)
-  );
-  const [meshRotationY, setMeshRotationY] = useState(
-    (1 + props.mouseYe * 10) * (Math.PI / 180)
+    (1 + props.mouseX * 2) * (Math.PI / 180)
   );
 
   useEffect(() => {
-    const radians = (1 + props.mouseX * 10) * (Math.PI / 180);
+    const radians = (1 + props.mouseX * 2) * (Math.PI / 180);
     setMeshRotation(radians);
     //console.log(props.mouseX);
   }, [props.mouseX]);
-
-  useEffect(() => {
-    const radians = (1 + props.mouseYe * 10) * (Math.PI / 180);
-    setMeshRotationY(radians);
-    console.log(props.mouseYe);
-  }, [props.mouseYe]);
 
   useEffect(() => {
     if (gltf.scene) {
@@ -42,9 +33,9 @@ function Model(props) {
     <group>
       <mesh>
         <primitive
-          rotation-x={-meshRotation}
+          rotation-x={0}
           rotation-y={meshRotation}
-          position={[-5, -1, -2]}
+          position={[-7, -0.5, -2]}
           object={gltf.scene}
         />
       </mesh>
