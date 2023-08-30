@@ -104,12 +104,37 @@ function Markeplace(props) {
       }
     }
 
+    //Handle Foto zoom for product
+    const [fotoprevOpen, setFotoprevOpen] = useState(false);
+
+    function handleClickPicProduct() {
+      setFotoprevOpen(true);
+    }
+    function PreviewPhotoScreen(props) {
+      function handleExitPhoto() {
+        props.onExit();
+      }
+
+      return (
+        <div className={`photo-screen ${props.classToggle}`}>
+          <div onClick={handleExitPhoto} className="exit-photobutton">
+            X
+          </div>
+          <img src="/box1.png" className="preview-product-pic-xcp" />
+        </div>
+      );
+    }
+
     return (
       <div className="card-pill-o">
+        <PreviewPhotoScreen
+          onExit={() => setFotoprevOpen(false)}
+          classToggle={fotoprevOpen ? "" : "hiddenfoto"}
+        />
         <div className="cont-posologie">
           <div className="big-s-posologie">50</div>
           <div className="big-s-name-posologie">Sidegra</div>
-          <img src="/50mg.png" alt="" />
+          <img onClick={handleClickPicProduct} src="/50mg.png" alt="" />
         </div>
         <div className="price-pill-posologie">
           <span className="t-1-ro">€</span> {currentQ}
@@ -233,12 +258,37 @@ function Markeplace(props) {
       }
     }
 
+    //Handle Foto zoom for product
+    const [fotoprevOpen, setFotoprevOpen] = useState(false);
+
+    function handleClickPicProduct() {
+      setFotoprevOpen(true);
+    }
+    function PreviewPhotoScreen(props) {
+      function handleExitPhoto() {
+        props.onExit();
+      }
+
+      return (
+        <div className={`photo-screen ${props.classToggle}`}>
+          <div onClick={handleExitPhoto} className="exit-photobutton">
+            X
+          </div>
+          <img src="/box.png" className="preview-product-pic-xcp" />
+        </div>
+      );
+    }
+
     return (
       <div className="card-pill-o bg-two-pill-o">
+        <PreviewPhotoScreen
+          onExit={() => setFotoprevOpen(false)}
+          classToggle={fotoprevOpen ? "" : "hiddenfoto"}
+        />
         <div className="cont-posologie">
           <div className="big-s-posologie">100</div>
           <div className="big-s-name-posologie whitec">Sidegra</div>
-          <img src="/100mg.png" alt="" />
+          <img onClick={handleClickPicProduct} src="/100mg.png" alt="" />
         </div>
         <div className="price-pill-posologie whitec">
           <span className="t-1-ro">€</span> {currentQ}
