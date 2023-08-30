@@ -22,12 +22,9 @@ import { de_lang } from "../lang/de-DE";
 import { ar_lang } from "../lang/ar-SA";
 import { el_lang } from "../lang/el-GR";
 
-function Home() {
-  // if (!localStorage.getItem("acces-token-pfc")) {
-  //   location.href = "/";
-  //   return;
-  // }
+import { pack_prices } from "../settings/prices";
 
+function Home() {
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(true);
 
@@ -47,22 +44,22 @@ function Home() {
     let name = "";
 
     if (x === "450") {
-      price = 18;
+      price = pack_prices.s50;
       name = "Sidegra 50mg - 4 Pillules";
     } else if (x === "1250") {
-      price = 44;
+      price = pack_prices.m50;
       name = "Sidegra 50mg - 12 Pillules";
     } else if (x === "2850") {
-      price = 72;
+      price = pack_prices.xl50;
       name = "Sidegra 50mg - 28 Pillules";
     } else if (x === "4100") {
-      price = 20;
+      price = pack_prices.s100;
       name = "Sidegra 100mg - 4 Pillules";
     } else if (x === "12100") {
-      price = 54;
+      price = pack_prices.m100;
       name = "Sidegra 100mg - 12 Pillules";
     } else if (x === "28100") {
-      price = 85;
+      price = pack_prices.xl100;
       name = "Sidegra 100mg - 28 Pillules";
     }
 
@@ -171,15 +168,20 @@ function Home() {
 
       <Markeplace language={langPack} onAddToCard={handleAddToCard} />
 
-      <Banner />
+      <Banner language={langPack} />
 
-      <ProductDetails />
+      <ProductDetails language={langPack} />
 
-      <Contact />
+      <Contact language={langPack} />
 
-      <Footer onLanguageChange={handleSetLanguage} />
+      <Footer language={langPack} onLanguageChange={handleSetLanguage} />
 
-      <Payment payment={paymentPage} onExit={handleExitPaymentPage} />
+      <Payment
+        language={langPack}
+        cart={cart}
+        payment={paymentPage}
+        onExit={handleExitPaymentPage}
+      />
 
       <Cart
         language={langPack}

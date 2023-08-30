@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import RevCarousel from "./Carousel";
 
+import { pack_prices } from "../settings/prices";
+
 function Markeplace(props) {
   const [packSize, setPackSize] = useState("4");
 
@@ -12,7 +14,6 @@ function Markeplace(props) {
   function handleSelectPackSize(x) {
     setPackSize(x);
   }
-
   function CardSelectPack(props) {
     function handleSelectPack(event) {
       const packSize = event.target.id;
@@ -50,6 +51,7 @@ function Markeplace(props) {
       <div className="banner-product-types-o">
         <div className="logo-banner-product-types-o">
           <img src="/logo.png" />
+          <div className="name-pill-banner-o">SidegraPills</div>
         </div>
         <div className="title-banner-product-types-o">
           {props.language.marketplace_banner_title}
@@ -68,7 +70,7 @@ function Markeplace(props) {
           offset={-100}
           className="description-banner-info-btn"
         >
-          Plus d'info
+          {props.language.marketplace_more_info_button}
         </Link>
         <div className="container-reviews-banner">
           <RevCarousel language={props.language} />
@@ -76,7 +78,6 @@ function Markeplace(props) {
       </div>
     );
   }
-
   function Card50MG(props) {
     const [currentQ, setCurrentQ] = useState(setInitialPrice());
 
@@ -86,21 +87,21 @@ function Markeplace(props) {
 
     function setCurrentPrice() {
       if (props.packSize === "4") {
-        setCurrentQ(18);
+        setCurrentQ(pack_prices.s50);
       } else if (props.packSize === "12") {
-        setCurrentQ(44);
+        setCurrentQ(pack_prices.m50);
       } else if (props.packSize == "28") {
-        setCurrentQ(72);
+        setCurrentQ(pack_prices.xl50);
       }
     }
 
     function setInitialPrice() {
       if (props.packSize === "4") {
-        return 18;
+        return pack_prices.s50;
       } else if (props.packSize === "12") {
-        return 44;
+        return pack_prices.m50;
       } else if (props.packSize == "28") {
-        return 72;
+        return pack_prices.xl50;
       }
     }
 
@@ -240,21 +241,21 @@ function Markeplace(props) {
 
     function setCurrentPrice() {
       if (props.packSize === "4") {
-        setCurrentQ(20);
+        setCurrentQ(pack_prices.s100);
       } else if (props.packSize === "12") {
-        setCurrentQ(54);
+        setCurrentQ(pack_prices.m100);
       } else if (props.packSize == "28") {
-        setCurrentQ(85);
+        setCurrentQ(pack_prices.xl100);
       }
     }
 
     function setInitialPrice() {
       if (props.packSize === "4") {
-        return 20;
+        return pack_prices.s100;
       } else if (props.packSize === "12") {
-        return 54;
+        return pack_prices.m100;
       } else if (props.packSize == "28") {
-        return 85;
+        return pack_prices.xl100;
       }
     }
 
@@ -387,7 +388,7 @@ function Markeplace(props) {
   }
 
   return (
-    <div id="buy" className="page">
+    <div id="buy" className="page marketplace-page ">
       <div className="container-product-types-o">
         <div className="left-side-container-product-types-o">
           <BannerMarket language={props.language} />

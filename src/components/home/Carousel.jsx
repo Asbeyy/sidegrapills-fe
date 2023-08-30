@@ -27,18 +27,18 @@ function RevCarousel(props) {
         </div>
         <div className="card-review">
           <div className="upper-review">
-            {props.language.marketplace_banner_review}
+            {props.language.marketplace_banner_review2}
           </div>
           <div className="bottom-review">
             <div className="container-info-review-o">
-              <div>Matteo</div>
-              <div className="profession-info-review">Crans-Montana</div>
+              <div>Simon</div>
+              <div className="profession-info-review">Lausanne</div>
             </div>
           </div>
         </div>
         <div className="card-review">
           <div className="upper-review">
-            {props.language.marketplace_banner_review}
+            {props.language.marketplace_banner_review3}
           </div>
           <div className="bottom-review">
             <div className="container-info-review-o">
@@ -49,12 +49,45 @@ function RevCarousel(props) {
         </div>
         <div className="card-review">
           <div className="upper-review">
-            {props.language.marketplace_banner_review}
+            {props.language.marketplace_banner_review4}
           </div>
           <div className="bottom-review">
             <div className="container-info-review-o">
               <div>Fracois</div>
               <div className="profession-info-review">Nice</div>
+            </div>
+          </div>
+        </div>
+        <div className="card-review">
+          <div className="upper-review">
+            {props.language.marketplace_banner_review5}
+          </div>
+          <div className="bottom-review">
+            <div className="container-info-review-o">
+              <div>Thomas</div>
+              <div className="profession-info-review">London</div>
+            </div>
+          </div>
+        </div>
+        <div className="card-review">
+          <div className="upper-review">
+            {props.language.marketplace_banner_review6}
+          </div>
+          <div className="bottom-review">
+            <div className="container-info-review-o">
+              <div>Giacomo</div>
+              <div className="profession-info-review">Rome</div>
+            </div>
+          </div>
+        </div>
+        <div className="card-review">
+          <div className="upper-review">
+            {props.language.marketplace_banner_review7}
+          </div>
+          <div className="bottom-review">
+            <div className="container-info-review-o">
+              <div>Kevin</div>
+              <div className="profession-info-review">Bucarest</div>
             </div>
           </div>
         </div>

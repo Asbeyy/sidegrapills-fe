@@ -7,6 +7,8 @@ function Cart(props) {
   }, 0);
 
   function handleGotoPaymentPage() {
+    if (totalPrice === 0) return alert("aucun atricle selectionné");
+
     props.onOpenPaymentPage();
     props.onToggleCart();
   }
@@ -42,13 +44,13 @@ function Cart(props) {
           </div>
           <div className="holder-price-final">
             <div>{props.language.cart_delivery}</div>
-            <div>8.00 €</div>
+            <div>5.00 €</div>
           </div>
           <br />
           <br />
           <div className="holder-price-final bold">
             <div>{props.language.cart_totalprice}</div>
-            <div>{(totalPrice + 8).toFixed(2)} €</div>
+            <div>{(totalPrice + 5).toFixed(2)} €</div>
           </div>
         </div>
       </div>
@@ -153,7 +155,7 @@ function Cart(props) {
             clipRule="evenodd"
           />
         </svg>
-        {(totalPrice + 8).toFixed(2)} €
+        {(totalPrice + 5).toFixed(2)} €
       </div>
       <div className="container-payers">
         <img src={paymentMethods} className="img-payee" />
@@ -169,11 +171,9 @@ function CardProductCart(props) {
   function handleDeleteProduct() {
     props.deleteProduct(props.nID);
   }
-
   function handleChangeQuanityPlus(key, update) {
     props.onSetQuantity(props.nID, 1);
   }
-
   function handleChangeQuanityMinus(key, update) {
     if (props.quantity === 1) return;
     props.onSetQuantity(props.nID, -1);

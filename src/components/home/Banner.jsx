@@ -1,6 +1,6 @@
 import React from "react";
 
-function Banner() {
+function Banner(props) {
   return (
     <div className="banner-shipment-xcp">
       <div className="card-banner-xcp">
@@ -19,8 +19,8 @@ function Banner() {
           />
         </svg>
 
-        <div className="title-card-xcp">Spedition globale</div>
-        <div className="desc-card-xcp">Envoyes partout dans le monde</div>
+        <div className="title-card-xcp">{props.language.banner_title_1}</div>
+        <div className="desc-card-xcp">{props.language.banner_desc_1}</div>
       </div>
       <div className="card-banner-xcp">
         <svg
@@ -38,10 +38,8 @@ function Banner() {
           />
         </svg>
 
-        <div className="title-card-xcp">Prix competitif</div>
-        <div className="desc-card-xcp">
-          Meilleur raport qualite prix du marche
-        </div>
+        <div className="title-card-xcp">{props.language.banner_title_2}</div>
+        <div className="desc-card-xcp">{props.language.banner_desc_2}</div>
       </div>
       <div className="card-banner-xcp">
         <svg
@@ -59,10 +57,8 @@ function Banner() {
           />
         </svg>
 
-        <div className="title-card-xcp">payments Safe</div>
-        <div className="desc-card-xcp">
-          Tous le payements electroniques du site sont encryptées
-        </div>
+        <div className="title-card-xcp">{props.language.banner_title_3}</div>
+        <div className="desc-card-xcp">{props.language.banner_desc_3}</div>
       </div>
       <div className="card-banner-xcp">
         <svg
@@ -80,10 +76,8 @@ function Banner() {
           />
         </svg>
 
-        <div className="title-card-xcp">Livraison rapide</div>
-        <div className="desc-card-xcp">
-          Envoy sous 2 heures, temps de livraison, 7 jours
-        </div>
+        <div className="title-card-xcp">{props.language.banner_title_4}</div>
+        <div className="desc-card-xcp">{props.language.banner_desc_4}</div>
       </div>
     </div>
   );

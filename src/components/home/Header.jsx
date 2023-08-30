@@ -44,7 +44,7 @@ export default function Header(props) {
     <header>
       <div className="logo-name-header-xcw">
         <img src="./logo.png" style={{ height: "35px" }} />
-        <div className="title-name">Sidegrapills</div>
+        <div className="title-name">SidegraPills</div>
       </div>
       <div className="holder-links">
         <select
