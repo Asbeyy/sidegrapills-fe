@@ -1,3 +1,5 @@
+//https://api-sidegrapills.vercel.app
+
 import React, { useEffect, useState } from "react";
 import paymentProviders from "../../assets/paymentprov.png";
 
@@ -16,9 +18,8 @@ function Payment(props) {
   const elements = useElements();
 
   const [paymentisProcessing, setPaymentisProcessing] = useState(false);
-  const [waitPage, setWaitPage] = useState(false);
-  const [successPage, setSuccessPage] = useState(false);
-  const [deniedPage, setDeniedPage] = useState(false);
+
+  const [loadingPage, setLoadingPage] = useState(false);
 
   const style = {
     base: {
@@ -36,12 +37,19 @@ function Payment(props) {
     },
   };
 
+  function handleToggleGreenCheck() {
+    document.querySelector(".circle-loader").className =
+      "circle-loader load-complete";
+    document.querySelector(".checkmark").style.display = "block";
+    document.querySelector(".checkmark").classList = "checkmark draw animcheck";
+  }
+
   async function handlePayment(e) {
     e.preventDefault();
 
     //Display wait page
     setTimeout(() => {
-      setWaitPage(true);
+      setLoadingPage(true);
     }, 1500);
 
     //If a payment attempt is already running, return
@@ -103,18 +111,15 @@ function Payment(props) {
                     if (data.error) {
                       //Payment declined
                       setPaymentisProcessing(false);
-                      setWaitPage(false);
-                      setDeniedPage(true);
-                      setTimeout(() => {
-                        location.reload();
-                      }, 1500);
+                      setLoadingPage(false);
+                      alert(data.error);
+                      location.reload();
                     } else {
                       //Payment succesfull
-                      setWaitPage(false);
-                      setSuccessPage(true);
+                      handleToggleGreenCheck();
                       setTimeout(() => {
                         location.reload();
-                      }, 1500);
+                      }, 2000);
                     }
                     console.log(data);
                   });
@@ -197,34 +202,12 @@ function Payment(props) {
           </div>
         </div>
       </div>
-      {waitPage ? (
-        <div className="container-pagamenti pwait">
-          <div className="loader">
-            <svg viewBox="0 0 80 80">
-              <circle id="test" cx="40" cy="40" r="32"></circle>
-            </svg>
-          </div>
-
-          <div className="loader triangle">
-            <svg viewBox="0 0 86 80">
-              <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-          </div>
-
-          <div className="loader">
-            <svg viewBox="0 0 80 80">
-              <rect x="8" y="8" width="64" height="64"></rect>
-            </svg>
+      {loadingPage ? (
+        <div className="container-pagamenti psucces">
+          <div className={`circle-loader`}>
+            <div className={`checkmark draw`}></div>
           </div>
         </div>
-      ) : null}
-
-      {successPage ? (
-        <div className="container-pagamenti psucces">Success</div>
-      ) : null}
-
-      {deniedPage ? (
-        <div className="container-pagamenti pdenied">Denied</div>
       ) : null}
     </div>
   );
