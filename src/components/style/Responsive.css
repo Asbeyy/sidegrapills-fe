@@ -86,11 +86,13 @@
   }
 
   .cart-cont {
-    width: 100vw;
-    height: calc(100vh - 55px);
-    border-radius: 0;
+    width: 95%;
+    height: calc(60vh - 55px);
+    border-radius: 0 0 20px 20px;
     top: 55px;
-    left: 0;
+    left: calc(50% - 47.5vw);
+    padding-top: 20px;
+    overflow: auto;
   }
 
   .button-pay {
@@ -325,10 +327,15 @@
   }
 
   .container-pagamenti {
-    border-radius: 0;
-    height: auto;
-    width: 100%;
+    border-radius: 10px;
+    max-height: 70%;
+    width: 95%;
     flex-direction: column-reverse;
+    overflow-y: scroll;
+  }
+
+  .page-payment {
+    overflow: auto;
   }
 
   .box-section-payment {
@@ -354,5 +361,72 @@
     text-align: justify;
     padding: 10px;
     box-sizing: border-box;
+  }
+
+  .hh {
+    width: 46%;
+  }
+
+  .hh2 {
+    width: 74.5%;
+  }
+
+  .hh3 {
+    width: 17.5%;
+  }
+
+  .form-payment {
+    height: auto;
+  }
+
+  .gigipazzerllo {
+    height: auto;
+    margin-bottom: 120px;
+  }
+
+  .container-double-input-c {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .container-input-c {
+    min-height: 65px;
+    width: 46%;
+  }
+
+  .select-query-container-c {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    padding: 0 10px;
+  }
+
+  .select-query-container-c label {
+    font-size: 18px;
+  }
+
+  .select-query-container-c select {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contianer-text-area {
+    padding: 0 10px;
+  }
+  .button-send-message {
+    margin-left: 10px;
+  }
+
+  .title-banner-product-types-o {
+    font-size: 40px;
+  }
+
+  .subtitle-banner-product-types-o {
+    font-size: 37px;
+  }
+
+  .name-m {
+    font-size: 14px;
   }
 }

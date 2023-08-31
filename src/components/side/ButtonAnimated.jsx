@@ -12,7 +12,7 @@ function ButtonAnimated(props) {
   }
 
   return (
-    <div>
+    <div className="gigipazzerllo">
       <button className="buy-button-id">
         <svg
           style={{ width: "24px", height: "24px" }}
