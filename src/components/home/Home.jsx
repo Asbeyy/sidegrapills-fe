@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../style/App.css";
 import "../style/Responsive.css";
 
+import Preloader from "./Preloader";
 import Header from "./Header";
 import Landing from "./Landing";
 import Informations from "./Informations";
@@ -167,6 +168,8 @@ function Home() {
 
   return (
     <div className="body-site">
+      {/* <Preloader /> */}
+
       <Header
         language={langPack}
         lang={language}
