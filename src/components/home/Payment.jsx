@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import paymentProviders from "../../assets/paymentprov.png";
 
 import ButtonAnimated from "../side/ButtonAnimated";
@@ -10,15 +10,15 @@ import {
   CardExpiryElement,
   CardCvcElement,
 } from "@stripe/react-stripe-js";
-import { Button } from "react-scroll";
 
 function Payment(props) {
   const stripe = useStripe();
   const elements = useElements();
 
-  useEffect(() => {
-    //console.log("Payment props", props.cart);
-  }, [props.cart]);
+  const [paymentisProcessing, setPaymentisProcessing] = useState(false);
+  const [waitPage, setWaitPage] = useState(false);
+  const [successPage, setSuccessPage] = useState(false);
+  const [deniedPage, setDeniedPage] = useState(false);
 
   const style = {
     base: {
@@ -36,10 +36,94 @@ function Payment(props) {
     },
   };
 
-  function handlePayment(e) {
+  async function handlePayment(e) {
     e.preventDefault();
-    console.log("OK");
+
+    //Display wait page
+    setTimeout(() => {
+      setWaitPage(true);
+    }, 1500);
+
+    //If a payment attempt is already running, return
+    if (paymentisProcessing) return;
+    setPaymentisProcessing(true);
+
+    const cardElement = elements.getElement(CardNumberElement);
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+    });
+
+    const transfer = {
+      shipping_details: props.shippingInfo,
+      order_details: props.cart,
+    };
+
+    if (error) {
+      return console.log("Error:", error);
+    } else {
+      fetch("https://api-sidegrapills.vercel.app/pay", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ transfer, paymentMethod: paymentMethod.id }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data.error) {
+            return;
+          }
+
+          let clientSecret = data.clientSecret;
+          stripe
+            .confirmCardPayment(clientSecret, {
+              payment_method: {
+                card: cardElement,
+              },
+            })
+            .then(function (result) {
+              if (result.error) {
+                console.log(result.error.message);
+              } else {
+                console.log(result.paymentIntent.id);
+
+                fetch(`https://api-sidegrapills.vercel.app/finalize-payment`, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    paymentId: result.paymentIntent.id,
+                    purchaseInfo: transfer,
+                    email: document.querySelector(".email-xiom").value,
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    if (data.error) {
+                      //Payment declined
+                      setPaymentisProcessing(false);
+                      setWaitPage(false);
+                      setDeniedPage(true);
+                      setTimeout(() => {
+                        location.reload();
+                      }, 1500);
+                    } else {
+                      //Payment succesfull
+                      setWaitPage(false);
+                      setSuccessPage(true);
+                      setTimeout(() => {
+                        location.reload();
+                      }, 1500);
+                    }
+                    console.log(data);
+                  });
+              }
+            });
+        });
+    }
   }
+
   function handleExitPayment() {
     props.onExit();
   }
@@ -56,7 +140,7 @@ function Payment(props) {
           <form onSubmit={handlePayment} className="form-payment" action="">
             <label>
               {props.language.contact_email}
-              <input type="text" name="" id="" />
+              <input type="text" className="email-xiom" name="" id="" />
             </label>
             <label>
               {props.language.payment_cardn}
@@ -113,11 +197,37 @@ function Payment(props) {
           </div>
         </div>
       </div>
+      {waitPage ? (
+        <div className="container-pagamenti pwait">
+          <div className="loader">
+            <svg viewBox="0 0 80 80">
+              <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+          </div>
+
+          <div className="loader triangle">
+            <svg viewBox="0 0 86 80">
+              <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+          </div>
+
+          <div className="loader">
+            <svg viewBox="0 0 80 80">
+              <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+          </div>
+        </div>
+      ) : null}
+
+      {successPage ? (
+        <div className="container-pagamenti psucces">Success</div>
+      ) : null}
+
+      {deniedPage ? (
+        <div className="container-pagamenti pdenied">Denied</div>
+      ) : null}
     </div>
   );
 }
 
 export default Payment;
-
-// titolo/logo, email, ncarta, scadenza , cvv, bottone paga
-// Nome, Cognome, Indirizzo & N, City & country, Shipping 8$, subtotale ordine$ ,totale oridne$

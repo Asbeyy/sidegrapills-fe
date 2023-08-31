@@ -4,17 +4,11 @@ import "../style/Button.css";
 
 function ButtonAnimated(props) {
   function handleClick(e) {
-    handleClickPayFinal();
-
     //Animation
     document.querySelector(".buy-button-id").classList.toggle("checked-out");
     setTimeout(() => {
       document.querySelector(".transparent-b").classList.toggle("checked-b");
     }, 1000);
-  }
-
-  function handleClickPayFinal() {
-    console.log(props.cart);
   }
 
   return (
@@ -32,9 +26,9 @@ function ButtonAnimated(props) {
         </svg>
         <span>{props.language.payment_pay_button}</span>
       </button>
-      <div type="submit" onClick={handleClick} className="transparent-b">
+      <button type="submit" onClick={handleClick} className="transparent-b">
         {props.language.payment_pay_wait}
-      </div>
+      </button>
     </div>
   );
 }

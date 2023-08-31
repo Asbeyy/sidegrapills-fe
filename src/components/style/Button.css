@@ -22,12 +22,12 @@ button {
   transition: box-shadow 0.2s ease, background-color 150ms ease;
 }
 button:focus {
-  box-shadow: 0 8px 64px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px 16px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 button:hover,
 button:active {
-  background-color: #eee;
+  background-color: #ffffff00;
 }
 button span {
   width: 80%;
@@ -92,7 +92,7 @@ button span {
   height: 56.5px;
   border-radius: 30px;
   z-index: 10;
-  transform: translateY(-55.5px);
+  transform: translateY(-115.5px);
   background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
   color: rgba(255, 255, 255, 0);
@@ -100,8 +100,12 @@ button span {
   transition: 300ms;
 }
 
+.transparent-b:hover {
+  background-color: #98b1ef00;
+}
+
 .checked-b {
-  background-color: #2f498bbf;
+  background-color: #98b0ef;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -152,6 +152,19 @@ function Home() {
     setPaymentPage(false);
   }
 
+  const [shippingInfo, setShippingInfo] = useState({});
+  function handleConfirmOrder(x) {
+    setShippingInfo({
+      name: x.name,
+      surname: x.surname,
+      adress: x.adress,
+      adress_number: x.adress_number,
+      zip_code: x.zip_code,
+      city: x.city,
+      country: x.country,
+    });
+  }
+
   return (
     <div className="body-site">
       <Header
@@ -180,6 +193,7 @@ function Home() {
         language={langPack}
         cart={cart}
         payment={paymentPage}
+        shippingInfo={shippingInfo}
         onExit={handleExitPaymentPage}
       />
 
@@ -191,6 +205,7 @@ function Home() {
         onSetQuantity={handleSetQuantity}
         deleteProduct={handleDeleteProduct}
         onOpenPaymentPage={handleOpenPaymentPage}
+        onConfirmOrder={handleConfirmOrder}
       />
     </div>
   );

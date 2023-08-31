@@ -8,9 +8,32 @@ function Cart(props) {
 
   function handleGotoPaymentPage() {
     if (totalPrice === 0) return alert("aucun atricle selectionné");
+    handleFillUpShipmentDetails();
 
     props.onOpenPaymentPage();
     props.onToggleCart();
+  }
+
+  function handleFillUpShipmentDetails() {
+    const name = document.querySelector(".name-xuio");
+    const surname = document.querySelector(".surname-xuio");
+    const adress = document.querySelector(".adress-xuio");
+    const adress_number = document.querySelector(".adressn-xuio");
+    const zip_code = document.querySelector(".zip-xuio");
+    const city = document.querySelector(".city-xuio");
+    const country = document.querySelector(".country-xuio");
+
+    const x = {
+      name: name.value,
+      surname: surname.value,
+      adress: adress.value,
+      adress_number: adress_number.value,
+      zip_code: zip_code.value,
+      city: city.value,
+      country: country.value,
+    };
+
+    props.onConfirmOrder(x);
   }
 
   return (
@@ -56,37 +79,37 @@ function Cart(props) {
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh">
-          <input type="text" />
+          <input className="name-xuio" type="text" />
           <div className="title-input"> {props.language.add_name}</div>
         </div>
         <div className="cont-input-c hh">
-          <input type="text" />
+          <input className="surname-xuio" type="text" />
           <div className="title-input"> {props.language.add_surname}</div>
         </div>
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh2">
-          <input type="text" />
+          <input className="adress-xuio" type="text" />
           <div className="title-input"> {props.language.add_street}</div>
         </div>
         <div className="cont-input-c hh3">
-          <input type="text" />
+          <input className="adressn-xuio" type="text" />
           <div className="title-input"> {props.language.add_streetn}</div>
         </div>
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh3">
-          <input type="text" />
+          <input className="zip-xuio" type="text" />
           <div className="title-input"> {props.language.add_cap}</div>
         </div>
         <div className="cont-input-c hh2">
-          <input type="text" />
+          <input className="city-xuio" type="text" />
           <div className="title-input"> {props.language.add_city}</div>
         </div>
       </div>
       <div className="cont-2-inp">
         <div className="cont-input-c hh4">
-          <select name="country" id="">
+          <select className="country-xuio" name="country" id="">
             <option value="albania">Albania</option>
             <option value="andorra">Andorra</option>
             <option value="austria">Austria</option>
