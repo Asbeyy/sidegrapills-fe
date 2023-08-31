@@ -54,7 +54,7 @@ function Landing(props) {
         duration={800}
         offset={50}
       >
-        Aide
+        {props.language.help_button}
       </Link>
 
       <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} />

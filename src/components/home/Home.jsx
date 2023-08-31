@@ -45,22 +45,22 @@ function Home() {
 
     if (x === "450") {
       price = pack_prices.s50;
-      name = "Sidegra 50mg - 4 Pillules";
+      name = `Sidegra 50mg - 4 ${langPack.pill_name}`;
     } else if (x === "1250") {
       price = pack_prices.m50;
-      name = "Sidegra 50mg - 12 Pillules";
+      name = `Sidegra 50mg - 12 ${langPack.pill_name}`;
     } else if (x === "2850") {
       price = pack_prices.xl50;
-      name = "Sidegra 50mg - 28 Pillules";
+      name = `Sidegra 50mg - 28 ${langPack.pill_name}`;
     } else if (x === "4100") {
       price = pack_prices.s100;
-      name = "Sidegra 100mg - 4 Pillules";
+      name = `Sidegra 100mg - 4 ${langPack.pill_name}`;
     } else if (x === "12100") {
       price = pack_prices.m100;
-      name = "Sidegra 100mg - 12 Pillules";
+      name = `Sidegra 100mg - 12 ${langPack.pill_name}`;
     } else if (x === "28100") {
       price = pack_prices.xl100;
-      name = "Sidegra 100mg - 28 Pillules";
+      name = `Sidegra 100mg - 28 ${langPack.pill_name}`;
     }
 
     const product_object = {

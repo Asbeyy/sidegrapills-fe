@@ -165,4 +165,8 @@ export const ar_lang = {
   footer_l2_1: "ضعف الانتصاب",
   footer_l2_2: "سايدجرا",
   footer_l2_3: "الجرعة",
+
+
+  help_button: "يساعد",
+  pill_name: "حبوب",
 };

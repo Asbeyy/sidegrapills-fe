@@ -164,4 +164,7 @@ export const es_lang = {
   footer_l2_1: "Disfunción Eréctil",
   footer_l2_2: "Sidegra",
   footer_l2_3: "Dosis",
+
+  help_button: "Aiuda",
+  pill_name: "Pildoras",
 };

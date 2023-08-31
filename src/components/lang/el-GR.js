@@ -156,4 +156,7 @@ export const el_lang = {
   footer_contact: "Επικοινωνία",
   footer_privacy: "Πολιτική απορρήτου",
   footer_terms: "Όροι χρήσης",
+
+  help_button: "βοήθεια",
+  pill_name: "χάπια",
 };
