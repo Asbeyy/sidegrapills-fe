@@ -213,7 +213,9 @@ function CardProductCart(props) {
       )}
 
       <div className="info-op">
-        <div className="name-m">{props.name}</div>
+        <div className="name-m">
+          {props.name} {props.language.pill_name}
+        </div>
       </div>
 
       <div className="counter-op">
