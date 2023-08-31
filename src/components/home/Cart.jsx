@@ -53,6 +53,7 @@ function Cart(props) {
                 onSetQuantity={props.onSetQuantity}
                 product_id={product.id}
                 deleteProduct={props.deleteProduct}
+                language={props.language}
               />
             );
           })}
