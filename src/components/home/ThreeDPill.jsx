@@ -35,9 +35,7 @@ function Model(props) {
         <primitive
           rotation-x={0}
           rotation-y={meshRotation}
-          position={
-            window.innerWidth < 500 ? [-5.5, -10, -24] : [-5.5, -2, -10]
-          }
+          position={window.innerWidth < 500 ? [-5.5, -4, -28] : [-5.5, -2, -10]}
           object={gltf.scene}
         />
       </mesh>

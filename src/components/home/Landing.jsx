@@ -57,7 +57,7 @@ function Landing(props) {
         Aide
       </Link>
 
-      {/* <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} /> */}
+      <ThreeDPill mouseX={mouseX} mouseYe={mouseYe} />
     </div>
   );
 }

@@ -109,4 +109,250 @@
   .card-product-op {
     min-height: 40px;
   }
+
+  .marketplace-page {
+    height: auto;
+  }
+
+  .container-product-types-o {
+    height: auto;
+    width: 100vw;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+    box-shadow: none;
+  }
+
+  .left-side-container-product-types-o {
+    width: 100%;
+  }
+
+  .banner-product-types-o {
+    width: 100%;
+  }
+
+  .right-side-container-product-types-o {
+    margin-top: 60px;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .upper-part-product-types-o {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .container-chose-size-pack {
+    transform: none;
+    margin-top: 30px;
+  }
+
+  .lower-part-product-types-o {
+    flex-direction: column;
+  }
+
+  .card-pill-o {
+    width: 93%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .banner-shipment-xcp {
+    height: auto;
+    width: 82%;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+
+  .marketplace-page {
+    background: white;
+  }
+
+  .information-page {
+    background: linear-gradient(white, #547adb45, #547adb6b, white);
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .details-container {
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .details-upper-section {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .details-desc-upper-section {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .details-cont-cont {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  .details-cont-cont-img img {
+    height: 300px;
+    transform: translateX(40px) translateY(0);
+  }
+
+  .details-separator {
+    width: 80%;
+    height: 5px;
+    margin-top: -30px;
+    margin-bottom: 55px;
+  }
+
+  .details-lower-section {
+    width: 100%;
+  }
+
+  .details-title-lower-section {
+    transform: translateX(20px);
+  }
+
+  .details-desc-lower-section {
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  .cont-chem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .warning-details {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+    padding: 100px 0;
+  }
+
+  .warning-details img {
+    height: 150px;
+  }
+
+  .warning-details div {
+    width: 100%;
+    text-align: center;
+
+    box-sizing: border-box;
+    padding: 0 50px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.754);
+    font-size: 15px;
+  }
+
+  .details-details-lower-box-container {
+    flex-direction: column;
+  }
+
+  .details-box-cont-text {
+    width: 100%;
+  }
+
+  .details-box-title {
+  }
+
+  .details-box-title {
+    transform: none;
+
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  .details-box-desc {
+    transform: none;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  .details-box-img1 {
+    height: 350px;
+    transform: translateY(-50px) translateX(-90px);
+  }
+
+  .details-box-img2 {
+    height: 330px;
+    transform: translateY(-145px) translateX(-10px);
+  }
+
+  .details-box-img3 {
+    height: 450px;
+    transform: translateY(-90px) translateX(-100px);
+  }
+
+  .container-contact {
+    width: 100%;
+    min-height: 800px;
+
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-contact {
+    width: 90%;
+    font-size: 60px;
+  }
+
+  footer {
+    height: auto;
+  }
+
+  .footer-up {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .footer-down {
+    justify-content: start;
+  }
+
+  .container-pagamenti {
+    border-radius: 0;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .box-section-payment {
+    width: 100%;
+  }
+
+  .box-recap-payment {
+    width: 100%;
+  }
+
+  .container-terms {
+    width: 95%;
+  }
+
+  .text-terms {
+    width: 100%;
+    border-radius: 20px;
+    overflow-y: auto;
+    border: none;
+  }
+
+  .terms-container {
+    text-align: justify;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 }
