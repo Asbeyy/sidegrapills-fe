@@ -46,6 +46,7 @@ export const de_lang = {
   add_country: "Land",
   add_continue: "Weiter",
   add_terms: "Nutzungsbedingungen",
+  read_terms: "Ich akzeptiere",
 
   //Informationsseite
   info_title1: "Sidegra: Das thailändische Generikum",

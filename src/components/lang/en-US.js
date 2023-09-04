@@ -46,6 +46,7 @@ export const en_lang = {
   add_country: "Country",
   add_continue: "Continue",
   add_terms: "Terms & Conditions",
+  read_terms: "I accept the",
 
   //Information Page
   info_title1: "Sidegra: The Thai Generic Medication",

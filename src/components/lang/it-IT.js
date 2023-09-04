@@ -45,7 +45,8 @@ export const it_lang = {
   add_city: "Città",
   add_country: "Paese",
   add_continue: "Continua",
-  add_terms: "Condizioni e Termini di Utilizzo",
+  add_terms: "le condizioni e Termini di Utilizzo",
+  read_terms: "Accetto ",
 
   //Pagina Informazioni
   info_title1: "Sidegra: Il generico tailandese",
@@ -167,7 +168,6 @@ export const it_lang = {
   footer_l2_1: "Disfunzione erettile",
   footer_l2_2: "Sidegra",
   footer_l2_3: "Dosaggio",
-
 
   help_button: "Aiuto",
   pill_name: "Pillole",

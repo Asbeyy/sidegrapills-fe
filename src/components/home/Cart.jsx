@@ -7,11 +7,15 @@ function Cart(props) {
   }, 0);
 
   function handleGotoPaymentPage() {
-    if (totalPrice === 0) return alert("aucun atricle selectionné");
-    handleFillUpShipmentDetails();
+    const checkbox_terms = document.querySelector(".checkbox-terms-xiup");
 
-    props.onOpenPaymentPage();
-    props.onToggleCart();
+    if (totalPrice === 0) return alert("No product selected");
+    if (!checkbox_terms.checked)
+      return alert("Accept the terms and conditions");
+
+    console.log(checkbox_terms.checked);
+
+    handleFillUpShipmentDetails();
   }
 
   function handleFillUpShipmentDetails() {
@@ -22,6 +26,14 @@ function Cart(props) {
     const zip_code = document.querySelector(".zip-xuio");
     const city = document.querySelector(".city-xuio");
     const country = document.querySelector(".country-xuio");
+
+    if (name.value === "") return alert("Please enter your name");
+    if (surname.value === "") return alert("Please enter your surname");
+    if (adress.value === "") return alert("Please enter your adress");
+    if (adress_number.value === "")
+      return alert("Please enter your adress number");
+    if (zip_code.value === "") return alert("Please enter your zip code");
+    if (city.value === "") return alert("Please enter your city");
 
     const x = {
       name: name.value,
@@ -34,6 +46,8 @@ function Cart(props) {
     };
 
     props.onConfirmOrder(x);
+    props.onOpenPaymentPage();
+    props.onToggleCart();
   }
 
   return (
@@ -181,9 +195,15 @@ function Cart(props) {
         </svg>
         {(totalPrice + 5).toFixed(2)} €
       </div>
+      <div className="cont-check-terms">
+        <input type="checkbox" className="checkbox-terms-xiup" />
+        <div>
+          {props.language.read_terms}&nbsp;
+          <a href="/terms">{props.language.add_terms}</a>
+        </div>
+      </div>
       <div className="container-payers">
         <img src={paymentMethods} className="img-payee" />
-        <a href="/terms">{props.language.add_terms}</a>
       </div>
     </div>
   );

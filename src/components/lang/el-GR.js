@@ -46,6 +46,7 @@ export const el_lang = {
   add_country: "Χώρα",
   add_continue: "Συνέχεια",
   add_terms: "Όροι και Προϋποθέσεις Χρήσης",
+  read_terms: "Δέχομαι",
 
   //Σελίδα Πληροφοριών
   info_title1: "Σάιντγκρα: Το Ταϊλανδικό Γενόσημο Φάρμακο",

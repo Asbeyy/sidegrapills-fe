@@ -46,6 +46,7 @@ export const ru_lang = {
   add_country: "Страна",
   add_continue: "Продолжить",
   add_terms: "Условия и положения",
+  read_terms: "Я принимаю",
 
   //Страница информации
   info_title1: "Сайдгра: Тайский генерик",
@@ -167,7 +168,6 @@ export const ru_lang = {
   footer_l2_1: "Эректильная дисфункция",
   footer_l2_2: "Сайдгра",
   footer_l2_3: "Дозировка",
-
 
   help_button: "Помощь",
   pill_name: "таблетки",

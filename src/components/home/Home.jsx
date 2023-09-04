@@ -72,6 +72,8 @@ function Home() {
       key: Math.random() * 9999,
     };
 
+    if (product_object.id === "" || product_object.name === "") return;
+
     setCart([...cart, product_object]);
   }
   function handleDeleteProduct(x) {

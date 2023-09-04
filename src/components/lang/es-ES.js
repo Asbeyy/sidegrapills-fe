@@ -45,7 +45,8 @@ export const es_lang = {
   add_city: "Ciudad",
   add_country: "País",
   add_continue: "Continuar",
-  add_terms: "Términos y Condiciones",
+  add_terms: "los términos y Condiciones",
+  read_terms: "Accepto",
 
   //Página de Información
   info_title1: "Sidegra: El Medicamento Genérico Tailandés",

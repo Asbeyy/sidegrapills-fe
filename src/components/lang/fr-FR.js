@@ -45,7 +45,8 @@ export const fr_lang = {
   add_city: "Ville",
   add_country: "Pays",
   add_continue: "Continuer",
-  add_terms: "Conditions & Termes d'utilisation",
+  add_terms: "les conditions & Termes",
+  read_terms: "J'accepte",
 
   //Page Information
   info_title1: "Sidegra : Le médicament générique thaïlandais",
@@ -171,5 +172,5 @@ export const fr_lang = {
   footer_l2_3: "Dosage",
 
   help_button: "Aide",
-  pill_name: "Pillule"
+  pill_name: "Pillule",
 };
