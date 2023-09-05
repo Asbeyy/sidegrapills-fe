@@ -1626,6 +1626,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 70px;
 }
 
 .box-section-payment {
