@@ -1618,10 +1618,10 @@ footer {
 /* Payment Page */
 
 .container-pagamenti {
-  width: 800px;
-  height: 600px;
+  min-width: 105vw;
+  height: 100vh;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.391);
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   display: flex;
   justify-content: center;
