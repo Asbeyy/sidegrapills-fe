@@ -3,6 +3,7 @@ import "../style/App.css";
 import "../style/Responsive.css";
 
 import Preloader from "./Preloader";
+import Promo from "./Promo";
 import Header from "./Header";
 import Landing from "./Landing";
 import Informations from "./Informations";
@@ -171,6 +172,8 @@ function Home() {
   return (
     <div className="body-site">
       {/* <Preloader /> */}
+
+      <Promo language={langPack} />
 
       <Header
         language={langPack}

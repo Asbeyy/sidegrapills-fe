@@ -2326,3 +2326,15 @@ footer {
   display: flex;
   align-items: center;
 }
+
+.banner-drop {
+  width: 100vw;
+  height: 60px;
+  background-color: bisque;
+  position: absolute;
+  top: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

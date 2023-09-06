@@ -171,4 +171,6 @@ export const it_lang = {
 
   help_button: "Aiuto",
   pill_name: "Pillole",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

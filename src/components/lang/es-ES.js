@@ -168,4 +168,6 @@ export const es_lang = {
 
   help_button: "Aiuda",
   pill_name: "Pildoras",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

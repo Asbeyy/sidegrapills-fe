@@ -171,4 +171,6 @@ export const ru_lang = {
 
   help_button: "Помощь",
   pill_name: "таблетки",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

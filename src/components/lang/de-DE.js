@@ -170,4 +170,6 @@ export const de_lang = {
 
   help_button: "Hilfe",
   pill_name: "Pillen",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

@@ -175,4 +175,5 @@ export const fr_lang = {
   pill_name: "Pillule",
 
   free_delivery: "GRATUIT",
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

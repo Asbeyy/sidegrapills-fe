@@ -169,4 +169,6 @@ export const ar_lang = {
 
   help_button: "يساعد",
   pill_name: "حبوب",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

@@ -160,4 +160,6 @@ export const el_lang = {
 
   help_button: "βοήθεια",
   pill_name: "χάπια",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };

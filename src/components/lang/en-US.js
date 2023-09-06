@@ -168,4 +168,6 @@ export const en_lang = {
 
   help_button: "Help",
   pill_name: "Pills",
+
+  motd: "Livraison gratuite jusqu'au 30 Septembre",
 };
