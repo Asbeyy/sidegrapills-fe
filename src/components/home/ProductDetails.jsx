@@ -57,12 +57,20 @@ function ProductDetails(props) {
               </div>
             </div>
             <div className="details-box-cont-img">
-              <img src="/medical/clock.png" className="details-box-img1" />
+              <img
+                src="/medical/clock.png"
+                className="details-box-img1"
+                alt="clock illustration medical viagra"
+              />
             </div>
           </div>
           <div className="details-details-lower-box-container">
             <div className="details-box-cont-img">
-              <img src="/medical/nurses.png" className="details-box-img2" />
+              <img
+                src="/medical/nurses.png"
+                className="details-box-img2"
+                alt="nurses illustration medical viagra sidegra"
+              />
             </div>
             <div className="details-box-cont-text">
               <div className="details-box-title">
@@ -106,7 +114,11 @@ function ProductDetails(props) {
               </div>
             </div>
             <div className="details-box-cont-img">
-              <img src="/medical/shelf.png" className="details-box-img3" />
+              <img
+                src="/medical/shelf.png"
+                className="details-box-img3"
+                alt="shelf illustration, medical, viagra, sidegra"
+              />
             </div>
           </div>
         </div>

@@ -191,13 +191,15 @@ function Payment(props) {
               <div className="name-checkout-id">
                 {props.language.payment_rec_shipping}
               </div>
-              <div className="price-checkout-id">5 €</div>
+              <div className="price-checkout-id">
+                {props.language.free_delivery}
+              </div>
             </div>
             <div className="name-price-checkout totalb">
               <div className="name-checkout-id">
                 {props.language.payment_rec_total}
               </div>
-              <div className="price-checkout-id">{totalPrice + 5} €</div>
+              <div className="price-checkout-id">{totalPrice} €</div>
             </div>
           </div>
         </div>

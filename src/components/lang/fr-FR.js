@@ -173,4 +173,6 @@ export const fr_lang = {
 
   help_button: "Aide",
   pill_name: "Pillule",
+
+  free_delivery: "GRATUIT",
 };

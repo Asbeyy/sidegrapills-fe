@@ -9,16 +9,41 @@ function Footer(props) {
             {props.language.footer_title1}
           </div>
 
-          <Link to="home" smooth={true} duration={500}>
+          <Link
+            href="#home"
+            style={{ textDecoration: "none", color: "black" }}
+            to="home"
+            smooth={true}
+            duration={500}
+          >
             {props.language.footer_l_1}
           </Link>
-          <Link to="informations" smooth={true} duration={500}>
+          <Link
+            href="#informations"
+            style={{ textDecoration: "none", color: "black" }}
+            to="informations"
+            smooth={true}
+            duration={500}
+          >
             {props.language.footer_l_2}
           </Link>
-          <Link to="buy" smooth={true} duration={500}>
+          <Link
+            href="#buy"
+            style={{ textDecoration: "none", color: "black" }}
+            to="buy"
+            smooth={true}
+            duration={500}
+          >
             {props.language.footer_l_3}
           </Link>
-          <Link to="product-info" offset={-150} smooth={true} duration={500}>
+          <Link
+            href="#product-info"
+            style={{ textDecoration: "none", color: "black" }}
+            to="product-info"
+            offset={-150}
+            smooth={true}
+            duration={500}
+          >
             {props.language.footer_l_4}
           </Link>
         </div>

@@ -27,10 +27,12 @@ function Landing(props) {
       <div className="cont-scroll">
         <div className="scroll-text">{props.language.scroll_text}</div>
         <Link
+          href="informations"
           to="informations"
           smooth={true}
           duration={300}
           className="floating-scroll"
+          style={{ textDecoration: "none", color: "black" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +50,8 @@ function Landing(props) {
         </Link>
       </div>
       <Link
+        href="contact"
+        style={{ textDecoration: "none", color: "white" }}
         className="help-float-button"
         to="contact"
         smooth={true}

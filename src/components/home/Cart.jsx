@@ -82,13 +82,13 @@ function Cart(props) {
           </div>
           <div className="holder-price-final">
             <div>{props.language.cart_delivery}</div>
-            <div>5.00 €</div>
+            <div>{props.language.free_delivery}</div>
           </div>
           <br />
           <br />
           <div className="holder-price-final bold">
             <div>{props.language.cart_totalprice}</div>
-            <div>{(totalPrice + 5).toFixed(2)} €</div>
+            <div>{totalPrice.toFixed(2)} €</div>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@ function Cart(props) {
             clipRule="evenodd"
           />
         </svg>
-        {(totalPrice + 5).toFixed(2)} €
+        {totalPrice.toFixed(2)} €
       </div>
       <div className="cont-check-terms">
         <input type="checkbox" className="checkbox-terms-xiup" />

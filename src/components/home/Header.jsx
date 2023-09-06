@@ -61,10 +61,18 @@ export default function Header(props) {
           <option value="ru-RU">RU</option>
           <option value="ar-SA">عربي</option>
         </select>
-        <Link to="home" smooth={true} duration={500}>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          href="#home"
+          to="home"
+          smooth={true}
+          duration={500}
+        >
           <div className="link-sel">{props.language.header_link1}</div>
         </Link>
         <Link
+          style={{ textDecoration: "none", color: "black" }}
+          href="#informations"
           className="link-sel-extra-xc"
           to="informations"
           smooth={true}
@@ -72,7 +80,13 @@ export default function Header(props) {
         >
           <div className="link-sel">{props.language.header_link2}</div>
         </Link>
-        <Link to="buy" smooth={true} duration={500}>
+        <Link
+          href="#buy"
+          style={{ textDecoration: "none", color: "white" }}
+          to="buy"
+          smooth={true}
+          duration={500}
+        >
           <div className="buy-button">{props.language.header_buy}</div>
         </Link>
         <svg

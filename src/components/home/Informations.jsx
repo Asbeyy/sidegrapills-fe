@@ -9,7 +9,14 @@ function Informations(props) {
           <div className="title-hero2-info">{props.language.info_title1}</div>
           <div className="text-hero2-info">{props.language.info_desc1}</div>
           <div className="container-button-hero">
-            <Link className="button-hero" to="buy" smooth={true} duration={500}>
+            <Link
+              href="buy"
+              style={{ textDecoration: "none", color: "white" }}
+              className="button-hero"
+              to="buy"
+              smooth={true}
+              duration={500}
+            >
               {props.language.info_buy1}
             </Link>
           </div>
@@ -56,6 +63,8 @@ function Informations(props) {
 
         <div className="container-button-more-info-hero2">
           <Link
+            href="#product-info"
+            style={{ textDecoration: "none", color: "white" }}
             to="product-info"
             smooth={true}
             duration={500}

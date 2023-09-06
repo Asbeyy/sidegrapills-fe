@@ -50,7 +50,7 @@ function Markeplace(props) {
     return (
       <div className="banner-product-types-o">
         <div className="logo-banner-product-types-o">
-          <img src="/logo.png" />
+          <img src="/logo.png" alt="logo sidegra" />
           <div className="name-pill-banner-o">SidegraPills</div>
         </div>
         <div className="title-banner-product-types-o">
@@ -64,6 +64,8 @@ function Markeplace(props) {
           {props.language.marketplace_banner_description}
         </div>
         <Link
+          href="#posology"
+          style={{ textDecoration: "none", color: "white" }}
           to="posology"
           smooth={true}
           duration={300}
